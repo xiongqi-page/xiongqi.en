@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" itemscope itemtype="https://schema.org/Game">
+  <head>
+    <title>Xiongqi - Panda Chess</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="index, follow">
+
+    <meta name="description" content="Complete rules of Xiongqi (Panda Chess), an abstract strategy game derived from Xiangqi and played on an 8×8 board: pieces, movements, promotion, generals face-to-face and end-of-game conditions.">
+    <meta name="keywords" content="Xiangqi, 熊棋, Xiongqi, rules, Panda Chess, game, Chinese chess, variant, board game">
+
+    <meta property="og:site_name" content="Xiongqi">
+    <meta property="og:title" content="Xiongqi - Panda Chess">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://en.xiongqi.page/">
+    <meta property="og:description" content="Complete rules of Xiongqi (Panda Chess): 8×8 board, pieces, movements, check (informative), promotion, dragons and end of game.">
+    <meta property="og:image" content="https://en.xiongqi.page/img/xiongqi-starting-position.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Xiongqi - Panda Chess">
+    <meta name="twitter:description" content="Complete rules of Xiongqi (Panda Chess): 8×8 board, pieces, movements, promotion, dragons and end of game.">
+    <meta name="twitter:image" content="https://en.xiongqi.page/img/xiongqi-starting-position.webp">
+
+    <link rel="icon" type="image/svg+xml" sizes="any" href="favicon.svg">
+
+    <link rel="alternate" hreflang="en" href="https://en.xiongqi.page/">
+    <link rel="alternate" hreflang="fr" href="https://fr.xiongqi.page/">
+    <link rel="alternate" hreflang="ja" href="https://ja.xiongqi.page/">
+    <link rel="alternate" hreflang="th" href="https://th.xiongqi.page/">
+    <link rel="alternate" hreflang="zh" href="https://zh.xiongqi.page/">
+    <link rel="alternate" hreflang="x-default" href="https://xiongqi.page/">
+
+    <link rel="canonical" href="https://en.xiongqi.page/">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "@id": "https://en.xiongqi.page/#game",
+        "name": "Xiongqi — Panda Chess",
+        "alternateName": [
+          "熊棋",
+          "Xiongqi",
+          "Panda Chess"
+        ],
+        "description": "Complete rules of Xiongqi (Panda Chess), an abstract strategy game derived from Xiangqi and played on an 8×8 board: pieces, movements, promotion, generals face-to-face and end-of-game conditions.",
+        "keywords": "Xiangqi, 熊棋, Xiongqi, rules, Panda Chess, game, Chinese chess, variant, board game",
+        "image": "https://en.xiongqi.page/img/xiongqi-starting-position.webp",
+        "url": "https://en.xiongqi.page/",
+        "inLanguage": "en",
+        "numberOfPlayers": {
+          "@type": "QuantitativeValue",
+          "minValue": 2,
+          "maxValue": 2
+        },
+        "creator": {
+          "@type": "Person",
+          "name": "Cyril Veltin"
+        },
+        "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "isBasedOn": {
+          "@type": "ShortStory",
+          "name": "Wei's Dream",
+          "url": "https://en.xiongqi.page/urban-legend/",
+          "inLanguage": "en",
+          "author": {
+            "@type": "Person",
+            "name": "Cyril Veltin"
+          },
+          "license": "https://creativecommons.org/publicdomain/zero/1.0/"
+        },
+        "sameAs": [
+          "https://xiongqi.page/",
+          "https://fr.xiongqi.page/",
+          "https://zh.xiongqi.page/",
+          "https://th.xiongqi.page/",
+          "https://ja.xiongqi.page/"
+        ],
+        "datePublished": "2019-04-28"
+      }
+    </script>
+
+    <style>
+      header {
+        display: flex;
+        gap: 1em;
+        align-items: flex-start;
+      }
+
+      article figure,
+      header figure,
+      header p {
+        margin: 0;
+      }
+
+      article figure img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      article figure figcaption {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      nav[aria-label="Table of contents"] {
+        display: inline-block;
+        margin: 1em 0;
+        padding: 1em;
+        background: #ccc;
+        border-radius: 1em;
+      }
+
+      nav[aria-label="Table of contents"] ol {
+        margin: 0;
+        padding-left: 1.5em;
+      }
+
+      nav[aria-label="Table of contents"] li {
+        margin: 0.3em 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <figure>
+        <img src="favicon.svg" alt="Xiongqi logo" height="64" width="64">
+      </figure>
+
+      <p>
+        Xiongqi (熊棋), also known as <q>Panda Chess</q>, is an abstract strategy game derived from Xiangqi (Chinese chess)
+        and adapted to an 8×8 board.<br>
+        This document describes the rules necessary and sufficient to play Xiongqi without ambiguity.
+      </p>
+    </header>
+
+    <hr>
+
+    <main>
+      <article>
+        <h1>Game rules</h1>
+
+        <nav aria-label="Table of contents">
+          <h2>Contents</h2>
+          <ol>
+            <li><a href="#general-concepts">General concepts</a></li>
+            <li><a href="#board-and-starting-position">Board and starting position</a></li>
+            <li><a href="#movement-capture-and-pieces">Movement, capture and pieces</a></li>
+            <li><a href="#face-to-face-and-dragons">Face-to-face and dragons</a></li>
+            <li><a href="#promotion">Soldier promotion</a></li>
+            <li><a href="#end-of-game">End of game</a></li>
+          </ol>
+        </nav>
+
+        <section id="general-concepts">
+          <h2>1. General concepts</h2>
+
+          <ul>
+            <li>The game is played between two sides: the South side and the North side.</li>
+            <li>The South side always plays the first move.</li>
+            <li>The sides then take turns, one move each.</li>
+            <li>A move consists of moving a single piece of one's own side, according to the rules described below.</li>
+            <li>The terminal piece of a side is its general, or its dragon if a transformation has occurred.</li>
+            <li>Capturing the terminal piece immediately ends the game.</li>
+          </ul>
+
+          <h3>1.1 Check and checkmate (informative notions)</h3>
+
+          <p>
+            In Xiongqi, <strong>check</strong> and <strong>checkmate</strong> exist,
+            but these notions are purely <strong>informative</strong>:
+            they do not restrict the allowed moves.
+          </p>
+
+          <ul>
+            <li>
+              <strong>Check</strong>: a situation where the terminal piece of a side
+              (general or dragon) is attacked by at least one enemy piece.
+              It is courteous to announce <q>check</q>, but not mandatory.
+            </li>
+            <li>
+              <strong>Checkmate</strong>: a check situation with no possible defense.
+              The side in checkmate is in a losing position;
+              it is customary to resign rather than wait for the capture.
+            </li>
+          </ul>
+
+          <p>
+            Nothing forbids playing a move that places or leaves one's own terminal piece in check.
+            Such a move remains legal, but the opponent can then capture that terminal piece
+            and immediately win the game.
+          </p>
+
+          <h3>1.2 Definition of a legal move</h3>
+
+          <p>
+            In the rest of this document, a <strong>legal move</strong> is a move that respects:
+            (1) the rules of movement and capture,
+            (2) the rules of face-to-face and promotion,
+            and (3) the prohibition of repetition.
+            The check situation is not part of this definition.
+          </p>
+        </section>
+
+        <section id="board-and-starting-position">
+          <h2>2. Board and starting position</h2>
+
+          <section id="board">
+            <h3>2.1 Board</h3>
+
+            <ul>
+              <li>Xiongqi is played on a board of 8 columns by 8 rows (8×8).</li>
+              <li>From the South side's point of view, the columns are named from left to right: a, b, c, d, e, f, g, h.</li>
+              <li>From the South side's point of view, the rows are numbered from bottom to top: 1, 2, 3, 4, 5, 6, 7, 8.</li>
+              <li>The South side occupies the rows close to 1, the North side those close to 8.</li>
+              <li>The <q>river</q> is located between rows 4 and 5.</li>
+            </ul>
+          </section>
+
+          <section id="pieces">
+            <h3>2.2 Pieces</h3>
+
+            <p>At the start of the game, each side has the following pieces:</p>
+
+            <ul>
+              <li>1 general</li>
+              <li>1 advisor</li>
+              <li>2 chariots</li>
+              <li>2 bears</li>
+              <li>2 horses</li>
+              <li>2 cannons</li>
+              <li>8 soldiers</li>
+            </ul>
+
+            <p>
+              The <strong>dragon</strong> is not placed at the start: it only appears if the two generals end up face-to-face.
+              The <strong>empress</strong> is not placed at the start: it only appears through soldier promotion.
+            </p>
+          </section>
+
+          <section id="starting-position">
+            <h3>2.3 Starting position</h3>
+
+            <p>The starting position is structurally identical for both sides, arranged as a mirror image.</p>
+
+            <figure>
+              <img
+                src="img/xiongqi-starting-position.webp"
+                alt="Diagram of the starting position: on the first row of each side, from left to right: chariot, horse, bear, advisor, general, bear, horse, chariot. On the second row, a cannon on c and a cannon on f. On the third row, eight soldiers in a line."
+                height="769"
+                width="768">
+              <figcaption>Starting position of a Xiongqi game</figcaption>
+            </figure>
+
+            <section id="south-side">
+              <h4>2.3.1 South side</h4>
+
+              <ul>
+                <li>Row 1 (a1 to h1): chariot, horse, bear, advisor, general, bear, horse, chariot.</li>
+                <li>Row 2: a cannon on c2 and a cannon on f2; the other squares are empty.</li>
+                <li>Row 3: a soldier on each square (a3 to h3).</li>
+              </ul>
+            </section>
+
+            <section id="north-side">
+              <h4>2.3.2 North side</h4>
+
+              <ul>
+                <li>Row 8 (a8 to h8): chariot, horse, bear, advisor, general, bear, horse, chariot.</li>
+                <li>Row 7: a cannon on c7 and a cannon on f7; the other squares are empty.</li>
+                <li>Row 6: a soldier on each square (a6 to h6).</li>
+              </ul>
+            </section>
+          </section>
+
+          <section id="piece-designation">
+            <h3>2.4 Piece designation conventions</h3>
+
+            <p>
+              By convention, each piece type is associated with a character and a distinct Latin abbreviation
+              depending on the side (uppercase for South, lowercase for North).
+              These conventions are useful in notation and implementation, but do not modify the rules.
+            </p>
+
+            <table>
+              <caption>Piece designation by side</caption>
+              <thead>
+                <tr>
+                  <th rowspan="2" scope="col">Piece type</th>
+                  <th colspan="2" scope="colgroup">South side</th>
+                  <th colspan="2" scope="colgroup">North side</th>
+                </tr>
+                <tr>
+                  <th scope="col">Character</th>
+                  <th scope="col"><abbr title="Abbreviation">Abbr.</abbr></th>
+                  <th scope="col">Character</th>
+                  <th scope="col"><abbr title="Abbreviation">Abbr.</abbr></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Advisor</th>
+                  <td>仕</td>
+                  <td><code>A</code></td>
+                  <td>士</td>
+                  <td><code>a</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Bear</th>
+                  <td>雄</td>
+                  <td><code>B</code></td>
+                  <td>熊</td>
+                  <td><code>b</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Cannon</th>
+                  <td>炮</td>
+                  <td><code>C</code></td>
+                  <td>砲</td>
+                  <td><code>c</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Dragon</th>
+                  <td>鳳</td>
+                  <td><code>D</code></td>
+                  <td>龍</td>
+                  <td><code>d</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Empress</th>
+                  <td>妃</td>
+                  <td><code>E</code></td>
+                  <td>騛</td>
+                  <td><code>e</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">General</th>
+                  <td>帥</td>
+                  <td><code>G</code></td>
+                  <td>將</td>
+                  <td><code>g</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Horse</th>
+                  <td>傌</td>
+                  <td><code>H</code></td>
+                  <td>馬</td>
+                  <td><code>h</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Chariot</th>
+                  <td>俥</td>
+                  <td><code>R</code></td>
+                  <td>車</td>
+                  <td><code>r</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Soldier</th>
+                  <td>兵</td>
+                  <td><code>S</code></td>
+                  <td>卒</td>
+                  <td><code>s</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+
+        <section id="movement-capture-and-pieces">
+          <h2>3. Movement, capture and pieces</h2>
+
+          <section id="general-principles">
+            <h3>3.1 General principles</h3>
+
+            <ul>
+              <li>On their turn, a side moves exactly one piece of their own side.</li>
+              <li>A move takes a piece from a starting square to a destination square.</li>
+              <li>The destination square must be either empty or occupied by an enemy piece.</li>
+              <li>A piece can never move to a square occupied by a piece of its own side.</li>
+              <li>
+                If the destination square is occupied by an enemy piece, that piece is captured:
+                it is removed from the board and the moving piece takes its place.
+              </li>
+              <li>
+                Unless otherwise stated in a piece's description, a piece cannot jump:
+                all squares between the starting square and the destination square must be empty.
+              </li>
+            </ul>
+          </section>
+
+          <section id="pieces-movements">
+            <h3>3.2 Pieces</h3>
+
+            <p>
+              The following sections describe, for each piece type, its movement and capture rules.
+              Unless explicitly stated, a piece captures by moving according to its normal rules onto a square occupied by an enemy piece.
+            </p>
+
+            <section id="advisor">
+              <h4>3.2.1 Advisor</h4>
+
+              <ul>
+                <li>The advisor moves one square diagonally.</li>
+                <li>It can move to any square on the board.</li>
+              </ul>
+            </section>
+
+            <section id="bear">
+              <h4>3.2.2 Bear</h4>
+
+              <ul>
+                <li>The bear moves any number of squares diagonally.</li>
+                <li>It cannot jump: all intermediate squares must be empty.</li>
+              </ul>
+            </section>
+
+            <section id="cannon">
+              <h4>3.2.3 Cannon</h4>
+
+              <dl>
+                <dt>Movement without capture</dt>
+                <dd>
+                  <ul>
+                    <li>The cannon moves horizontally or vertically, any number of squares.</li>
+                    <li>All intermediate squares must be empty.</li>
+                  </ul>
+                </dd>
+
+                <dt>Capture</dt>
+                <dd>
+                  <ul>
+                    <li>The cannon must be aligned with its target (same row or same column).</li>
+                    <li>
+                      Between the cannon and the target, there must be <strong>exactly one</strong> piece (of either side),
+                      called the <q>screen</q>.
+                    </li>
+                    <li>No other piece may be between the screen and the target.</li>
+                    <li>The cannon captures by moving to the target's square, jumping over the screen.</li>
+                  </ul>
+                </dd>
+              </dl>
+
+              <p>
+                A cannon cannot capture if there is no screen, nor if there are two or more pieces between it and the target.
+              </p>
+            </section>
+
+            <section id="dragon">
+              <h4>3.2.4 Dragon</h4>
+
+              <p>
+                The dragon (also called <q>flying general</q>) only appears after the generals are face-to-face.
+                Once it appears, it permanently replaces its side's general and becomes the terminal piece.
+              </p>
+
+              <dl>
+                <dt>Movement without capture</dt>
+                <dd>
+                  <ul>
+                    <li>The dragon moves one square, horizontally or vertically.</li>
+                  </ul>
+                </dd>
+
+                <dt>Capture</dt>
+                <dd>
+                  <ul>
+                    <li>The dragon captures on its row or column, at any distance.</li>
+                    <li>It cannot jump: all squares between the dragon and the target must be empty.</li>
+                  </ul>
+                </dd>
+              </dl>
+            </section>
+
+            <section id="empress">
+              <h4>3.2.5 Empress</h4>
+
+              <p>
+                The empress is not in the starting position: it appears through promotion.
+                On each move, it chooses a single movement mode.
+              </p>
+
+              <dl>
+                <dt>Chariot mode</dt>
+                <dd>
+                  <ul>
+                    <li>Horizontal or vertical movement, any number of squares.</li>
+                    <li>No jumping: all intermediate squares must be empty.</li>
+                  </ul>
+                </dd>
+
+                <dt>Knight mode</dt>
+                <dd>
+                  <ul>
+                    <li>Movement in an <q>L</q> shape: two squares in one orthogonal direction, then one square perpendicular to it.</li>
+                    <li>This mode allows jumping.</li>
+                  </ul>
+                </dd>
+              </dl>
+
+              <p>
+                The empress's <q>knight</q> mode differs from the horse's movement, because the horse can be blocked.
+              </p>
+            </section>
+
+            <section id="general">
+              <h4>3.2.6 General</h4>
+
+              <ul>
+                <li>The general moves one square, horizontally or vertically.</li>
+                <li>It can move to any square on the board.</li>
+                <li>The general is the terminal piece as long as it has not been replaced by a dragon.</li>
+              </ul>
+            </section>
+
+            <section id="horse">
+              <h4>3.2.7 Horse</h4>
+
+              <ul>
+                <li>
+                  The horse moves in two steps:
+                  <ol>
+                    <li>one square in an orthogonal direction (up, down, left or right);</li>
+                    <li>then one square diagonally outward.</li>
+                  </ol>
+                </li>
+                <li>
+                  The horse cannot jump: the adjacent orthogonal square (the horse's <q>leg</q>) must be empty.
+                  If it is occupied, movement in that direction is blocked.
+                </li>
+              </ul>
+            </section>
+
+            <section id="chariot">
+              <h4>3.2.8 Chariot</h4>
+
+              <ul>
+                <li>The chariot moves horizontally or vertically, any number of squares.</li>
+                <li>It cannot jump: all intermediate squares must be empty.</li>
+              </ul>
+            </section>
+
+            <section id="soldier">
+              <h4>3.2.9 Soldier</h4>
+
+              <p>The soldiers of each side advance in opposite directions:</p>
+
+              <ul>
+                <li>South side soldiers advance toward the North (increasing rows: from 3 toward 8).</li>
+                <li>North side soldiers advance toward the South (decreasing rows: from 6 toward 1).</li>
+              </ul>
+
+              <section id="soldier-before-river">
+                <h5>3.2.9.1 Before the river</h5>
+
+                <ul>
+                  <li>A South side soldier is <q>before the river</q> as long as it is on rows 1 to 4.</li>
+                  <li>A North side soldier is <q>before the river</q> as long as it is on rows 5 to 8.</li>
+                  <li>
+                    Before the river, a soldier:
+                    <ul>
+                      <li>moves one square forward;</li>
+                      <li>captures in the same way;</li>
+                      <li>cannot move backward or sideways.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </section>
+
+              <section id="soldier-after-river">
+                <h5>3.2.9.2 After the river</h5>
+
+                <ul>
+                  <li>A South side soldier has crossed the river once it reaches row 5 or beyond.</li>
+                  <li>A North side soldier has crossed the river once it reaches row 4 or a lower row.</li>
+                  <li>
+                    After the river, a soldier:
+                    <ul>
+                      <li>keeps its one-square forward movement;</li>
+                      <li>gains a one-square sideways movement (left or right);</li>
+                      <li>captures forward or sideways;</li>
+                      <li>still cannot move backward.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </section>
+            </section>
+          </section>
+        </section>
+
+        <section id="face-to-face-and-dragons">
+          <h2>4. Face-to-face and dragons</h2>
+
+          <p>The two generals are said to be <q>face-to-face</q> when:</p>
+
+          <ul>
+            <li>they occupy the same column;</li>
+            <li>no piece is between them;</li>
+            <li>the South side general is on a lower row than the North side general.</li>
+          </ul>
+
+          <p>
+            <strong>As soon as this configuration occurs, both generals immediately transform into dragons.</strong>
+          </p>
+
+          <ul>
+            <li>The transformation applies to both sides, even if only one side played the move that created the face-to-face.</li>
+            <li>A dragon permanently replaces its side's general.</li>
+            <li>The terminal piece of each side then becomes the dragon.</li>
+          </ul>
+        </section>
+
+        <section id="promotion">
+          <h2>5. Soldier promotion</h2>
+
+          <ul>
+            <li>
+              When a soldier ends a move on the last row of the enemy side
+              (row 8 for South side, row 1 for North side), the player may choose to promote it.
+            </li>
+            <li>Promotion is optional: the player may promote immediately or leave the soldier as is.</li>
+            <li>A soldier already on the last row may be promoted later, provided the player has just moved it.</li>
+            <li>
+              Upon promotion, the soldier is removed and replaced on the same square by a piece of choice among:
+              empress, advisor, cannon, chariot, bear, horse.
+            </li>
+            <li>Promotion to general (and therefore to dragon) is forbidden.</li>
+            <li>The choice is free: a player may have multiple pieces of the same type.</li>
+          </ul>
+        </section>
+
+        <section id="end-of-game">
+          <h2>6. End of game</h2>
+
+          <section id="victory-by-capture">
+            <h3>6.1 Victory by capture</h3>
+
+            <p>
+              A side wins immediately when it captures the enemy terminal piece:
+              the general, or the dragon if a transformation has occurred.
+            </p>
+          </section>
+
+          <section id="loss-by-stalemate">
+            <h3>6.2 Loss by stalemate</h3>
+
+            <p>
+              A side loses immediately if, on its turn, it has no legal move available.
+              The presence or absence of check has no effect on this rule.
+            </p>
+          </section>
+
+          <section id="repetition">
+            <h3>6.3 Loss by position repetition</h3>
+
+            <p>Repetitions are forbidden.</p>
+
+            <p>
+              A <strong>position</strong> includes the board configuration and the side whose turn it is to play.
+            </p>
+
+            <p>
+              A move is said to be <strong>repetitive</strong> if it meets these two conditions:
+            </p>
+
+            <ol>
+              <li>it recreates a position that has already occurred during the game;</li>
+              <li>
+                it is identical to the move that previously led to that position
+                (same piece, same starting square, same destination square, same promotion choice if applicable).
+              </li>
+            </ol>
+
+            <p>
+              A repetitive move is forbidden. If a player makes a repetitive move, they immediately lose the game.
+            </p>
+          </section>
+
+          <section id="draw-by-insufficient-material">
+            <h3>6.4 Draw by insufficient material</h3>
+
+            <p>
+              The game is declared a draw if both sides have only their terminal piece left on the board.
+            </p>
+          </section>
+
+          <section id="draw-by-50-move-rule">
+            <h3>6.5 Draw by 50-move rule</h3>
+
+            <p>
+              The game may be declared a draw if <strong>50 moves by each player</strong>
+              (i.e. <strong>100 half-moves</strong>) are played <strong>without any capture</strong> and <strong>without any soldier move</strong>.
+              Depending on the context (arbiter, platform), this draw is either claimed or automatic.
+            </p>
+          </section>
+
+          <section id="other-endings">
+            <h3>6.6 Other cases</h3>
+
+            <p>
+              The game may also end by resignation, time expiration, or mutual agreement to draw between the players.
+            </p>
+          </section>
+        </section>
+      </article>
+    </main>
+
+    <hr>
+
+    <nav aria-label="Language selection">
+      <p>Also available in other languages:</p>
+
+      <ul>
+        <li><a title="Switch to French" href="https://fr.xiongqi.page/" lang="fr">Français</a></li>
+        <li><a title="Switch to Chinese" href="https://zh.xiongqi.page/" lang="zh">中文</a></li>
+        <li><a title="Switch to Thai" href="https://th.xiongqi.page/" lang="th">ภาษาไทย</a></li>
+        <li><a title="Switch to Japanese" href="https://ja.xiongqi.page/" lang="ja">日本語</a></li>
+      </ul>
+    </nav>
+
+    <hr>
+
+    <footer>
+      <p>
+        This game originates from
+        <a href="urban-legend/" title="Wei's Dream" itemprop="isBasedOn">the unsettling dream of a peasant named Wei</a>.
+        Its rules, name and logo are placed in the public domain:
+        anyone is free to use, adapt and distribute them, on any medium, without prior authorization.
+      </p>
+    </footer>
+  </body>
+</html>
