@@ -27,7 +27,11 @@
     <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen">
 
     <link rel="alternate" hreflang="en" href="https://en.xiongqi.page/">
+    <link rel="alternate" hreflang="fr" href="https://fr.xiongqi.page/">
+    <link rel="alternate" hreflang="ja" href="https://ja.xiongqi.page/">
+    <link rel="alternate" hreflang="th" href="https://th.xiongqi.page/">
     <link rel="alternate" hreflang="zh" href="https://zh.xiongqi.page/">
+    <link rel="alternate" hreflang="x-default" href="https://xiongqi.page/">
 
     <link rel="canonical" href="https://en.xiongqi.page/">
 
@@ -36,17 +40,44 @@
         "@context": "https://schema.org",
         "@type": "Game",
         "name": "Xiongqi - Panda Chess",
-        "description": "Xiongqi - Panda Chess is a variant with bears replacing elephants, played on an 8x8 board aiming to checkmate the king",
-        "keywords": "Xiangqi, 熊棋, ションチー, Xiongqi, rules, Panda Chess, game",
+        "alternateName": ["熊棋", "Xiongqi", "Panda Chess"],
+        "description": "Xiongqi is a variant of Xiangqi (Chinese chess) with bears replacing elephants, played on an 8x8 board aiming to checkmate the king. The game is played by two players and introduces the 'Empress' piece which combines the movements of the Rook and Knight.",
+        "keywords": "Xiangqi, 熊棋, ションチー, Xiongqi, rules, Panda Chess, game, Chinese chess, variant, board game",
         "image": "https://en.xiongqi.page/img/xiongqi-starting-position.webp",
         "url": "https://en.xiongqi.page/",
-        "datePublished": "2019-04-28"
+        "datePublished": "2019-04-28",
+        "dateModified": "2025-03-15",
+        "numberOfPlayers": {
+          "@type": "QuantitativeValue",
+          "minValue": 2,
+          "maxValue": 2
+        },
+        "inLanguage": "en",
+        "sameAs": [
+          "https://zh.xiongqi.page/",
+          "https://fr.xiongqi.page/",
+          "https://ja.xiongqi.page/",
+          "https://th.xiongqi.page/"
+        ],
+        "about": {
+          "@type": "Thing",
+          "name": "Chess games",
+          "description": "Variant inspired by traditional Chinese chess played on a board"
+        },
+        "isBasedOn": {
+          "@type": "Game",
+          "name": "Xiangqi",
+          "alternateName": "Chinese chess"
+        },
+        "creator": {
+          "@type": "Organization",
+          "name": "Xiongqi Community"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://en.xiongqi.page/"
+        }
       }
-    </script>
-
-    <script type="module">
-      import { enhanceArticle } from './js/summary-nav-module.js';
-      enhanceArticle();
     </script>
   </head>
 
@@ -69,6 +100,21 @@
       </header>
 
       <nav aria-label="Table of contents">
+        <h2>Table of contents</h2>
+        <ul>
+          <li><a href="#setup">Setup</a></li>
+          <li><a href="#pieces">Pieces</a></li>
+          <li><a href="#rules">Rules</a>
+            <ul>
+              <li><a href="#auspicious-board">Auspicious Board</a></li>
+              <li><a href="#royal-duo">Royal Duo</a></li>
+              <li><a href="#borderless-gameplay">Borderless Gameplay</a></li>
+              <li><a href="#diagonal-dynamos">Diagonal Dynamos</a></li>
+              <li><a href="#dragon-s-leap">Dragon's Leap</a></li>
+              <li><a href="#pawn-ascension">Pawn Ascension</a></li>
+            </ul>
+          </li>
+        </ul>
       </nav>
 
       <section id="setup">
@@ -389,20 +435,31 @@
       </section>
     </article>
 
+    <aside>
+      <h2>See Also</h2>
+      <p>Discover these cultural variants of chess games:</p>
+
+      <ul>
+        <li>
+          <strong><a href="https://en.ogi.page/">Ōgi (王棋)</a></strong> — The <q>King's Game</q>, a Japanese variant derived from Shōgi, played on a reduced board with the possibility of reusing captured pieces.
+        </li>
+        <li>
+          <strong><a href="https://en.chess.page/">Chess</a></strong> — The <q>King of Games</q>, the classic Western variant played on an 8×8 board.
+        </li>
+      </ul>
+    </aside>
+
     <nav aria-label="Language Selection">
       <p>Also available in other languages:</p>
 
       <ul>
         <!-- <li><a title="Switch to English" href="https://en.xiongqi.page/" lang="en">English</a></li> -->
         <li><a title="Switch to Chinese" href="https://zh.xiongqi.page/" lang="zh">中文</a></li>
+        <li><a title="Switch to French" href="https://fr.xiongqi.page/" lang="fr">Français</a></li>
+        <li><a title="Switch to Thai" href="https://th.xiongqi.page/" lang="th">ภาษาไทย</a></li>
+        <li><a title="Switch to Japanese" href="https://ja.xiongqi.page/" lang="ja">日本語</a></li>
       </ul>
     </nav>
-
-    <footer>
-      <p>
-        <a href="https://github.com/xiongqi-page/xiongqi.en/edit/main/index.html" rel="external">Edit this page on GitHub</a>
-      </p>
-    </footer>
 
     <script type="module">
       import { initializeGame } from './js/game.js';
